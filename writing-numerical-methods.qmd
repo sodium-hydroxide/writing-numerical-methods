@@ -2,7 +2,7 @@
 format:
   pdf:
     number-sections: false
-    highlight-stype: github
+    highlight-type: github
     documentclass: article
 fig-align: center
 fig-cap-location: bottom
