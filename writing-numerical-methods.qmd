@@ -1,0 +1,38 @@
+---
+format:
+  pdf:
+    number-sections: false
+      highlight-stype: github
+  docx:
+    number-sections: false
+    highlight-style: github
+    reference-doc: _word_template.docx
+# csl: health-physics.csl
+# bibliography: pmder_manuscript.bib
+fig-align: center
+fig-cap-location: bottom
+fig-width: 6
+fig-dpi: 300
+fig-env: H
+tbl-cap-location: top
+crossref: 
+  tbl-title: Table
+  fig-title: Fig.
+  fig-prefix: Fig.
+  tbl-prefix: Table
+  eq-prefix: eqn
+ref-hyperlink: false
+execute: 
+  eval: true
+  echo: false
+  warning: false
+title: Writing About Numerical Methods
+author: 
+  - id: njb
+    name:
+      given: Noah
+      family: Blair
+    email: noah.blair@colostate.edu
+abstract: |
+keywords: 
+---
