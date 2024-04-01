@@ -1,0 +1,1 @@
+quarto render writing-numerical-methods.qmd
