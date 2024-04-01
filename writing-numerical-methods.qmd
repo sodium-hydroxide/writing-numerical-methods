@@ -24,10 +24,7 @@ execute:
 title: Writing About Numerical Methods
 author: 
   - id: njb
-    name:
-      given: Noah
-      family: Blair
-    email: noah.blair@colostate.edu
+    name: "Noah Blair\n\nColorado State University: Brandl Research Group\n\nnoah.blair@colostate.edu"
 date: today
 abstract: Numerical techniques are abundant in modern scientific disciplines and are commonly used to solve equations which would be difficult or impossible to solve in closed form or estimate measurements that a research is unable to currently perform. These can include simple methods, such as numerically solving differential and integral equations, to more complex methods such as Monte Carlo for transport theory, or simulations for computational fluid dynamics. When writing about these techniques for a thesis, dissertation, or article, it is prudent to describe several concepts regarding the numerical technique for readers to understand what utility is provided by the technique and why numerical methods were chosen over mathematical calculations or experiments. This report will provide an overview of how to write about numerical techniques and provide an outline for their use.
 keywords: numerical methods
@@ -43,16 +40,32 @@ When writing about the numerical techniques used, it is important to include a b
 
 # Theoretical Background
 
+After introducing the general ideas behind what you are measuring and why, it is important to provide a theoretical foundation for the quantities being determined. This does not need to be exhaustive, but a general outline will help readers understand why brute force hand calculations cannot be used.
 
+For computational fluid dynamics, this may be an introduction to the Navier-Stokes equations, how they describe the evolution of a velocity field, and the parameters of the equation relating to the project being done. It may also be useful to explain why the equations cannot directly integrated to obtain the results of interest. 
 
 # Experimental Background
 
+Many computational methods will attempt to simulate experimental techniques either through analog or non-analog methods. If this is the case for a computational technique being used, it may be helpful to explain how a quantity could be measured in the real world. 
 
+For measurements of radiation spectra following a shield, this may include description of the experimental techniques used to determine the spectrum. For photon radiation, this may be the use of a sodium-iodide or high-purity germanium detectors. For neutron radiation, this may be the use of Bonner-spheres. If possible in your computation, it may be useful to include these analog methods in the computation as verification of the computer model. Even if the code is widely used and has been verified, this extra step can add to the credibility of your results.
+
+This section can also include why the computational methods are being used in your research. This may be that your laboratory does not have the necessary instrumentation to perform measurements, or that the code allows for direct determination of quantities which can only be indirectly measured. 
 
 # Methods the Tool Uses to Sample Experimental Quantities
 
+The previous sections should ideally allow your reader to understand what you are attempting to "measure" or calculate as well as the reasons that computational and numerical techniques are needed. This section should describe the broad methods the code uses to sample experimental quantities as well as some more detailed methods for your specific quantities of interest.
 
+In the case of Monte Carlo methods for transport theory, this may be a general overview of the Monte Carlo process as well as an overview of the behavior for a single history. For direct simulations, this may include limitations in the resolution of a simulation and the techniques used to determine interactions. If the numerical method is simply integrating a differential equation, this section should include a broad overview of the integration technique and the algorithms used (Euler, Runga-Kutta, etc.).
+
+Then the method of determining your specific quantity of interest should be described. This may be how the code determines an event and the associated data with particular events. 
+
+If the quantity of interest is indirectly determined (such as absorbed dose in Monte Carlo determination of fluence measurements), you should provide the mathematical formula to obtain your quantity of interest from the values provided by the code. 
+
+This section should also include a broad overview of the uncertainty analysis. If the code provides estimates for the standard uncertainty, the components of the uncertainty should be described as well as any methods used to minimize uncertainty in your code. Depending on how the format of the document being written, this may be an appropriate place to include some exact parameters for the code and how it relates to an analog experimental setup. If possible, either in appendices or supplemental materials, include both code or input files for the code being used to allow replication of your work. 
+
+If this is not feasible (depending on the format of the inputs or export control), be sure to include a detailed enough explanation so that other researchers could replicate your study.
 
 # Conclusion
 
-
+While the techniques for writing these may seem daunting for researchers not accustomed to computational or numerical methods, the general techniques are similar to writing about standard analytical methods. The primary difference is the inclusion of general methods used by the code. Most well established codes will include manuals which describe the techniques. Other numerical techniques are typically included in numerical methods textbooks. 
